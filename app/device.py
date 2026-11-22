@@ -51,6 +51,10 @@ class PixooDevice:
         with self.lock:
             return self.command({'Command':'Channel/SetBrightness', 'Brightness':value})
 
+    def power(self, on):
+        with self.lock:
+            return self.command({'Command': 'Channel/OnOffScreen', 'OnOff': int(on)})
+
     def status(self):
         with self.lock:
             return self.command({'Command':'Channel/GetIndex'})

@@ -8,4 +8,4 @@ COPY app ./app
 RUN useradd --create-home --uid 10001 pixoo
 USER pixoo
 EXPOSE 8088
-CMD ["gunicorn", "--workers", "1", "--threads", "4", "--bind", "0.0.0.0:8088", "app.main:app"]
+CMD ["uvicorn", "app.server:app", "--host", "0.0.0.0", "--port", "8088", "--workers", "1", "--lifespan", "on"]

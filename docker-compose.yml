@@ -1,7 +1,8 @@
-
 services:
   pixoo-ai:
     image: pixoo-ai:1.0
+    build: .
+    pull_policy: build
     container_name: pixoo-ai
     restart: unless-stopped
 
@@ -9,9 +10,9 @@ services:
       - "8088:8088"
 
     environment:
-      PIXOO_HOST: "192.168.178.188"
-      PIXOO_PATH: "/post"
-      API_TOKEN: "${PIXOO_API_TOKEN}"
+      PIXOO_HOST: "${PIXOO_HOST:-192.168.178.188}"
+      PIXOO_PATH: "${PIXOO_PATH:-/post}"
+      API_TOKEN: "${API_TOKEN:-${PIXOO_API_TOKEN:-}}"
 
     healthcheck:
       test:
