@@ -31,7 +31,7 @@ Dashboard, REST und MCP laufen im selben Container auf Port `8088`. Alle drei te
 ## Portainer
 
 1. In einer **Docker-Standalone**-Umgebung unter **Stacks → Add stack → Repository** einen Stack anlegen.
-2. Als Repository-URL `https://github.com/SchlaubiderSchlaue/pixoo-ai-display.git`, als Referenz `refs/heads/main` und als Compose-Pfad `docker-compose.yml` wählen. Portainer baut `pixoo-ai:1.0` aus diesem Repository.
+2. Als Repository-URL `https://github.com/SchlaubiDerSchlaue/pixoo-ai-display.git`, als Referenz `refs/heads/main` und als Compose-Pfad `docker-compose.yml` wählen. Portainer baut `pixoo-ai:1.0` aus diesem Repository.
 3. In den Umgebungsvariablen des Stacks `API_TOKEN` setzen (mindestens 20 Zeichen). Bestehende Stacks können `PIXOO_API_TOKEN` weiterverwenden. Bei Bedarf auch `PIXOO_HOST` und `PIXOO_PATH` setzen. Alternativ lässt sich die lokal ausgefüllte `.env` über **Load variables from .env file** importieren.
 4. **Deploy the stack** wählen. Dashboard, REST und MCP sind über Port `8088` des Docker-Hosts erreichbar.
 
